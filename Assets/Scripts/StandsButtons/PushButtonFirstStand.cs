@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using UnityEngine.XR.Interaction.Toolkit;
+using System;
 
 public class PushButtonFirstStand : MonoBehaviour
 {
+    public static Action<int> OnButtonClick;
     [SerializeField] private XRSimpleInteractable simpleInteractable;
-
     [SerializeField] private Outline _objectOutline;
+
+    [SerializeField] private int _warningCode;
     private bool _isPressed = false;
 
     private void Awake()
@@ -22,6 +25,7 @@ public class PushButtonFirstStand : MonoBehaviour
         {
             _isPressed = true;
             _objectOutline.enabled = true;
+            OnButtonClick?.Invoke(_warningCode);
         }
         else
         {

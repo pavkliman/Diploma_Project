@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BoilUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI _warningText;
+
+    private void Awake()
     {
-        
+        PushButtonFirstStand.OnButtonClick += ChangeText;
+        PushButtonSecondStand.OnButtonClick += ChangeText;
+        PushButtonTherdStand.OnButtonClick += ChangeText;
+        PushButtonFourthStand.OnButtonClick += ChangeText;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ChangeText(int code)
     {
-        
+        _warningText.text = code.ToString();
     }
 }

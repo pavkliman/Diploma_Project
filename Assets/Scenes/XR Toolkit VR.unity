@@ -427,6 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleInteractable: {fileID: 98453127}
   _objectOutline: {fileID: 3614313089721170080}
+  _warningCode: 501
 --- !u!1 &39045766
 GameObject:
   m_ObjectHideFlags: 0
@@ -9564,7 +9565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 108
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9591,7 +9592,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.8
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10526,6 +10527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleInteractable: {fileID: 527668445}
   _objectOutline: {fileID: 8654613120823443004}
+  _warningCode: 101
 --- !u!1 &373144056
 GameObject:
   m_ObjectHideFlags: 0
@@ -37844,6 +37846,7 @@ MonoBehaviour:
   simpleInteractable: {fileID: 1111420063}
   _smokeEffect: {fileID: 209903542}
   _objectOutline: {fileID: 7239757590116046926}
+  _warningCode: 608
 --- !u!1 &1545566281
 GameObject:
   m_ObjectHideFlags: 0
@@ -47615,6 +47618,7 @@ MonoBehaviour:
   simpleInteractable: {fileID: 1881461118}
   _flareEffect: {fileID: 217580267}
   _objectOutline: {fileID: 1126569606}
+  _warningCode: 502
 --- !u!1001 &2061479226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50429,6 +50433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984b5bc4ae7746a4bbc40103dc8de2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _warningText: {fileID: 295208206}
 --- !u!33 &3469287837823432031
 MeshFilter:
   m_ObjectHideFlags: 0
