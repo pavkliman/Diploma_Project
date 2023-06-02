@@ -4,30 +4,58 @@ using UnityEngine;
 
 public class MaterialTiling : MonoBehaviour
 {
-    public float speed = 1.0f; // Скорость изменения Offset Y
-    public Renderer[] renderers; // Массив рендереров с материалами
+    public float _speed = 1.0f; // Скорость изменения Offset Y
+    public Renderer[] _renderers; // Массив рендереров с материалами
 
-    private float offset = 0.0f;
+    private float _offset = 0.0f;
+    private IEnumerator _waterFlow;
 
-    private void Start()
+    private void Awake()
     {
-        StartCoroutine(UpdateOffset());
+        PushButtonFiveStand.OnShowWaterFlow += IsStartWaterFlow;
     }
 
-    private System.Collections.IEnumerator UpdateOffset()
+    private void IsStartWaterFlow(bool isStart)
+    {
+        if (_waterFlow == null)
+        {
+            _waterFlow = UpdateOffset();
+        }
+
+        if (isStart)
+        {
+            foreach (var a in _renderers)
+            {
+                a.gameObject.SetActive(true);
+            }
+
+            StartCoroutine(UpdateOffset());
+        }
+        else
+        {
+            foreach (var a in _renderers)
+            {
+                a.gameObject.SetActive(false);
+            }
+
+            StopAllCoroutines();
+            _waterFlow = null;
+        }
+    }
+
+    private IEnumerator UpdateOffset()
     {
         while (true)
         {
-            offset += speed * Time.deltaTime;
+            _offset += _speed * Time.deltaTime;
 
             // Создаем новый вектор с измененным значением Offset Y
-            Vector2 newOffset = new Vector2(0.0f, offset);
-
+            Vector2 newOffset = new Vector2(0.0f, _offset);
             // Проходимся по всем рендерерам в массиве
-            for (int i = 0; i < renderers.Length; i++)
+            for (int i = 0; i < _renderers.Length; i++)
             {
                 // Присваиваем новое значение Offset Y каждому материалу в рендерере
-                renderers[i].material.mainTextureOffset = newOffset;
+                _renderers[i].material.mainTextureOffset = newOffset;
             }
 
             yield return null;
