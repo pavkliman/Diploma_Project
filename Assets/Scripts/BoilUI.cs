@@ -13,10 +13,19 @@ public class BoilUI : MonoBehaviour
         PushButtonSecondStand.OnButtonClick += ChangeText;
         PushButtonTherdStand.OnButtonClick += ChangeText;
         PushButtonFourthStand.OnButtonClick += ChangeText;
+        PushButtonSixStand.OnButtonClick += ChangeText;
     }
 
     private void ChangeText(int code)
     {
-        _warningText.text = code.ToString();
+        if (code != 0)
+        {
+            _warningText.text = code.ToString();
+        }
+        else
+        {
+            _warningText.text = " ";
+        }
+
     }
 }

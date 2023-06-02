@@ -36,6 +36,7 @@ public class PushButtonFourthStand : MonoBehaviour
         {
             _isPressed = false;
             _objectOutline.enabled = false;
+            OnButtonClick?.Invoke(0);
 
             _flareEffect.Stop();
         }

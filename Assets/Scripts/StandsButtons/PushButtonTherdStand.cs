@@ -34,6 +34,8 @@ public class PushButtonTherdStand : MonoBehaviour
         {
             _isPressed = false;
             _objectOutline.enabled = false;
+            OnButtonClick?.Invoke(0);
+
         }
     }
 }

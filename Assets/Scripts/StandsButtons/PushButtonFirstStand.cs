@@ -31,6 +31,8 @@ public class PushButtonFirstStand : MonoBehaviour
         {
             _isPressed = false;
             _objectOutline.enabled = false;
+            OnButtonClick?.Invoke(0);
+
         }
     }
 

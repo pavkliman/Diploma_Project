@@ -37,6 +37,7 @@ public class PushButtonSecondStand : MonoBehaviour
         {
             _isPressed = false;
             _objectOutline.enabled = false;
+            OnButtonClick?.Invoke(0);
 
             _smokeEffect.Stop();
         }
