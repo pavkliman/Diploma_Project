@@ -5,8 +5,15 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
 
+/// <summary>
+/// Клас, реализующий аварийную
+/// ситуацию перегрева теплообменника
+/// </summary>
 public class PushButtonFirstStand : MonoBehaviour
 {
+    /// <summary>
+    /// Описание события кнопки
+    /// </summary>
     public static Action<int> OnButtonClick;
     [SerializeField] private XRSimpleInteractable simpleInteractable;
     [SerializeField] private Outline _objectOutline;
@@ -18,7 +25,11 @@ public class PushButtonFirstStand : MonoBehaviour
     {
         simpleInteractable.selectEntered.AddListener(OnSelectEntered);
     }
-
+    /// <summary>
+    /// Проверка, что
+    /// кнопка нажата
+    /// </summary>
+    /// <param name="args"></param>
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         if (!_isPressed)

@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Класс, реадизующий снижение
+/// давления в контуре
+/// </summary>
 public class PushButtonSixStand : MonoBehaviour
 {
     public static Action<int> OnButtonClick;
@@ -20,6 +24,10 @@ public class PushButtonSixStand : MonoBehaviour
         simpleInteractable.selectEntered.AddListener(OnSelectEntered);
     }
 
+    /// <summary>
+    /// Проврека состояния кнопки
+    /// </summary>
+    /// <param name="args"></param>
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         if (!_isPressed)

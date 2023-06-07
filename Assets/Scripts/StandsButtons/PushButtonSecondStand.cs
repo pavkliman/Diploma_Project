@@ -5,6 +5,10 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
 
+/// <summary>
+/// Класс, демонстрирующий 
+/// задымлённость камеры сгорания
+/// </summary>
 public class PushButtonSecondStand : MonoBehaviour
 {
     public static Action<int> OnButtonClick;
@@ -21,7 +25,10 @@ public class PushButtonSecondStand : MonoBehaviour
     {
         simpleInteractable.selectEntered.AddListener(OnSelectEntered);
     }
-
+    /// <summary>
+    /// Проверка состояния кнопки
+    /// </summary>
+    /// <param name="args"></param>
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         if (!_isPressed)

@@ -5,6 +5,10 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
 
+/// <summary>
+/// Класс, реализующий неисправность
+/// газового клапана
+/// </summary>
 public class PushButtonTherdStand : MonoBehaviour
 {
     public static Action<int> OnButtonClick;
@@ -21,6 +25,10 @@ public class PushButtonTherdStand : MonoBehaviour
         simpleInteractable.selectEntered.AddListener(OnSelectEntered);
     }
 
+    /// <summary>
+    /// Проверка состояния кнопки
+    /// </summary>
+    /// <param name="args"></param>
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         if (!_isPressed)
